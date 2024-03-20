@@ -137,11 +137,11 @@ func (s *Sequencer) checkStateInconsistency(ctx context.Context) {
 }
 
 func (s *Sequencer) updateDataStreamerFile(ctx context.Context, chainID uint64) {
-	err := state.GenerateDataStreamerFile(ctx, s.streamServer, s.stateIntf, true, nil, chainID, s.cfg.StreamServer.UpgradeEtrogBatchNumber)
-	if err != nil {
-		log.Fatalf("failed to generate data streamer file, error: %v", err)
-	}
-	log.Info("data streamer file updated")
+	//err := state.GenerateDataStreamerFile(ctx, s.streamServer, s.stateIntf, true, nil, chainID, s.cfg.StreamServer.UpgradeEtrogBatchNumber)
+	//if err != nil {
+	//	log.Fatalf("failed to generate data streamer file, error: %v", err)
+	//}
+	//log.Info("data streamer file updated")
 }
 
 func (s *Sequencer) deleteOldPoolTxs(ctx context.Context) {

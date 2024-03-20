@@ -6,7 +6,7 @@ networks:
 services:
   zkevm-sequencer-v1tov2:
     container_name: zkevm-sequencer-v1tov2
-    image: hermeznetwork/zkevm-node:v0.6.3-RC2
+    image: zkevm-node:fsl
     ports:
       - 9092:9091
       - 6060:6060

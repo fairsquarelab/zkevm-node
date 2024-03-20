@@ -1,3 +1,11 @@
+# FSL
+아래 명령어 순차적으로 실행
+```bash
+make build-docker
+docker compose up -d
+```
+
+
 # zkEVM Node
 
 zkEVM Node is a Go implementation of a node that operates the Polygon zkEVM Network.

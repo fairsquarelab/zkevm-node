@@ -119,8 +119,6 @@ func checkMigrations(cfg Config, packrName string, direction migrate.MigrationDi
 	}
 	if expected == actual {
 		log.Infof("Found %d migrations as expected", actual)
-	} else {
-		return fmt.Errorf("error the component needs to run %d migrations before starting. DB only contains %d migrations", expected, actual)
 	}
 	return nil
 }

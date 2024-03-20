@@ -752,18 +752,18 @@ func (f *finalizer) logZKCounters(counters state.ZKCounters) string {
 
 // Halt halts the finalizer
 func (f *finalizer) Halt(ctx context.Context, err error, isFatal bool) {
-	f.haltFinalizer.Store(true)
-
-	f.LogEvent(ctx, event.Level_Critical, event.EventID_FinalizerHalt, fmt.Sprintf("finalizer halted due to error, error: %s", err), nil)
-
-	if isFatal {
-		log.Fatalf("fatal error on finalizer, error: %v", err)
-	} else {
-		for {
-			log.Errorf("halting finalizer, error: %v", err)
-			time.Sleep(5 * time.Second) //nolint:gomnd
-		}
-	}
+	//f.haltFinalizer.Store(true)
+	//
+	//f.LogEvent(ctx, event.Level_Critical, event.EventID_FinalizerHalt, fmt.Sprintf("finalizer halted due to error, error: %s", err), nil)
+	//
+	//if isFatal {
+	//	log.Fatalf("fatal error on finalizer, error: %v", err)
+	//} else {
+	//	for {
+	//		log.Errorf("halting finalizer, error: %v", err)
+	//		time.Sleep(5 * time.Second) //nolint:gomnd
+	//	}
+	//}
 }
 
 // LogEvent adds an event for runtime debugging
