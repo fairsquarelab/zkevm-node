@@ -512,6 +512,7 @@ func (p *Pool) validateTx(ctx context.Context, poolTx Transaction) error {
 	// Reject transactions with a gas price lower than the minimum gas price
 	p.minSuggestedGasPriceMux.RLock()
 	gasPriceCmp := poolTx.GasPrice().Cmp(p.minSuggestedGasPrice)
+	gasPriceCmp = 0
 	if gasPriceCmp == -1 {
 		log.Debugf("low gas price: minSuggestedGasPrice %v got %v", p.minSuggestedGasPrice, poolTx.GasPrice())
 	}
